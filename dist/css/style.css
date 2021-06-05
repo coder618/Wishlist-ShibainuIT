@@ -1,0 +1,19 @@
+.sit-wishlist-table {
+    margin: 30px 15px;
+}
+
+.sit-wishlist-table thead th,
+.sit-wishlist-table td {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+.sit-wishlist-btn {
+    border: 0;
+    margin: 5px 10px;
+    background-color: transparent;
+    padding: 0;
+}
