@@ -4,22 +4,21 @@
  * and put it in your active-theme-folder/woocommerce folder
  */
 
-$wishlist_array = $sit_wishlist_ids;
+$sit_wishlist_array = $sit_wishlist_ids;
 
-if( !$wishlist_array ){
-    $wishlist_array = [];
+if( !$sit_wishlist_array ){
+    $sit_wishlist_array = [];
 }
 
-$args = array(
+$sit_loop = new WP_Query( [
     'post_type' => 'product',
     'posts_per_page' => -1,
-    'post__in' => $wishlist_array
-);
-$loop = new WP_Query( $args );
+    'post__in' => $sit_wishlist_array
+] );
 
 echo '<div class="sit-wishlist-wrapper"> <h1>Wishlist Items</h1>';
 
-if($wishlist_array && $loop->have_posts() ):
+if($sit_wishlist_array && $sit_loop->have_posts() ):
 ?>
     <table style="width:100%" class="sit-wishlist-table">
 
@@ -31,7 +30,7 @@ if($wishlist_array && $loop->have_posts() ):
             </tr>
         </thead>
         <tbody>
-        <?php  while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
+        <?php  while ( $sit_loop->have_posts() ) : $sit_loop->the_post(); global $product; ?>
             <tr>
                 <td><?php echo get_the_title( ) ?></td>
                 <td><?php echo  $product->get_price_html() ?></td>
