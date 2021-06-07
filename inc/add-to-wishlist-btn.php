@@ -13,8 +13,6 @@ add_shortcode( 'SIT-WISHLIST-BUTTON', 'sit_after_add_to_cart_btn' );
 
 
 function sit_after_add_to_cart_btn(){
-    
-
     // check is user login or not
     if(is_user_logged_in()){
 
@@ -42,5 +40,5 @@ function sit_after_add_to_cart_btn(){
         echo "</div>";
 
     }
-
+    return "";
 }
