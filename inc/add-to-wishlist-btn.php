@@ -29,11 +29,11 @@ function sit_after_add_to_cart_btn(){
         $admin_url = admin_url( 'admin-ajax.php' );
         echo "<div class='sit-wishlist-btn-wrapper' >";
             if(in_array( $c_post_id,  $wishlist_array)): ?>
-                <button class="sit-wishlist-btn" data-nonce="<?php echo wp_create_nonce('sit-wishlist') ?>" data-post-id="<?php echo $c_post_id ?>" data-action="remove" data-admin-url="<?php echo $admin_url ?>" >
+                <button class="sit-wishlist-btn" data-nonce="<?php echo esc_attr(wp_create_nonce('sit-wishlist')) ?>" data-post-id="<?php echo esc_attr($c_post_id) ?>" data-action="remove" data-admin-url="<?php echo esc_url($admin_url) ?>" >
                     <?php sit_wishlist_template('after-add-btn.php') ?>
                 </button>
             <?php else: ?>
-                <button class="sit-wishlist-btn" data-nonce="<?php echo wp_create_nonce('sit-wishlist') ?>" data-post-id="<?php echo $c_post_id ?>" data-action="add" data-admin-url="<?php echo $admin_url ?>" >
+                <button class="sit-wishlist-btn" data-nonce="<?php echo esc_attr(wp_create_nonce('sit-wishlist')) ?>" data-post-id="<?php echo esc_attr($c_post_id) ?>" data-action="add" data-admin-url="<?php echo esc_url($admin_url) ?>" >
                     <?php sit_wishlist_template('before-add-btn.php'); ?>
                 </button>
             <?php endif; 
