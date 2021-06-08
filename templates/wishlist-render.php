@@ -32,8 +32,8 @@ if($sit_wishlist_array && $sit_loop->have_posts() ):
         <tbody>
         <?php  while ( $sit_loop->have_posts() ) : $sit_loop->the_post(); global $product; ?>
             <tr>
-                <td><?php echo get_the_title( ) ?></td>
-                <td><?php echo  $product->get_price_html() ?></td>
+                <td><?php echo esc_html( get_the_title( ) ); ?></td>
+                <td><?php echo wp_filter_post_kses($product->get_price_html()) ?></td>
                 <td>
                     <div class="action-btns">
                         <a class="woocommerce-Button button sit-btn sit-table-view-btn" href="<?php echo get_permalink() ?>">View Item</a>
