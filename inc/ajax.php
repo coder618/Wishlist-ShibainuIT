@@ -175,12 +175,10 @@ function sit_update_wishlist_settings(){
             die();
         }
 
-        if($before_html){
-            update_option( SIT_BEFORE_ADDED_BTN_HTML, $before_html );
-        }
-        if($after_html){
-            update_option( SIT_AFTER_ADDED_BTN_HTML, $after_html );
-        }
+        // update the option
+        update_option( SIT_BEFORE_ADDED_BTN_HTML, $before_html );
+        update_option( SIT_AFTER_ADDED_BTN_HTML, $after_html );
+        
         if($sit_default_btn_visibility){
             update_option( SIT_DEFAULT_WISHLIST_BTN_VISIBILITY, $sit_default_btn_visibility );
         }

@@ -1,9 +1,17 @@
 <?php
+
 /**
  * To overwrite this template create a file name after-add-btn.php
  * and put it in your active-theme-folder/woocommerce folder
  */
-$sit_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 4.435c-1.989-5.399-12-4.597-12 3.568 0 4.068 3.06 9.481 12 14.997 8.94-5.516 12-10.929 12-14.997 0-8.118-10-8.999-12-3.568z"/></svg>';
+$sit_admin_btn_html = get_option( SIT_AFTER_ADDED_BTN_HTML, false );
+if( $sit_admin_btn_html == false || ( is_string($sit_admin_btn_html) && trim($sit_admin_btn_html) == '' ) ){
+    $sit_img_path = esc_url_raw(SIT_PLUGIN_URL.'/dist/icons/heart-after.svg');
 
-// return the default icon if no value found
-echo  wp_kses_post(get_option( SIT_AFTER_ADDED_BTN_HTML, $sit_icon ));
+    // render default template
+    echo '<div class="wishlist-btn-inner"><img src="'.$sit_img_path.'" alt="remove icon" /> Remove from wishlist</div>';
+    
+}else{
+    // if button html set
+    echo wp_filter_post_kses($sit_admin_btn_html);
+}

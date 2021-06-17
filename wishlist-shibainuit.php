@@ -19,6 +19,7 @@ define( 'SIT_USER_META_KEY', 'sit_wishlist_ids' );
 define( 'SIT_BEFORE_ADDED_BTN_HTML', 'sit_wishlist_before_html' );
 define( 'SIT_AFTER_ADDED_BTN_HTML', 'sit_wishlist_after_html' );
 define( 'SIT_DEFAULT_WISHLIST_BTN_VISIBILITY', 'sit_wishlist_btn_visibility' );
+define( 'SIT_PLUGIN_URL' , plugin_dir_url(__FILE__));
 
 
 class SIT_Wishlist{
@@ -29,8 +30,18 @@ class SIT_Wishlist{
 	}
     public function reg_hooks(){
         add_action( 'wp_enqueue_scripts'	, [ $this, 'enqueue_frontend_assets' ] );               
-        add_action( 'admin_enqueue_scripts'	, [ $this, 'enqueue_admin_assets' ] );               
+        add_action( 'admin_enqueue_scripts'	, [ $this, 'enqueue_admin_assets' ] );              
+		
+		add_filter('plugin_action_links_'.plugin_basename(__FILE__), [$this, 'add_plugin_page_settings_link' ]);
+		
 	}
+
+	function add_plugin_page_settings_link( $links ) {
+		$links[] = '<a href="' .
+			admin_url( 'options-general.php?page=sit-wishlist-setting' ) .
+			'">' . __('Settings') . '</a>';
+		return $links;
+	} 
 
     /**
      * Enqueue all Necessary assets

@@ -10,6 +10,7 @@
             url: data_url,
             method: "POST",
             beforeSend: function () {
+                btn.addClass("disabled");
                 btn.prop("disabled", true);
                 console.log("Requesting Wishlist Update");
             },
@@ -38,9 +39,12 @@
                         btn.attr("data-action", "remove");
                     }
                 }
+
+                btn.removeClass("disabled");
             },
             complete: function (res) {
                 btn.prop("disabled", false);
+                btn.removeClass("disabled");
             },
         });
 

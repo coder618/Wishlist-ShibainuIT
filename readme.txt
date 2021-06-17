@@ -10,12 +10,8 @@ License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
-This is a Wishlist plugin for woocommerce. 
-This plugin is highly customizable. 
-After install a default wishlist button will appear beside woocommerce add to cart button (In Product detail page).
-You can hide this default wishlist button from plugin setting page.
-User will his found his Wishlist Items by clicking Wishlist Link  in the WooCommerce Dashboard.
-
+Its a woocommerce Wishlist plugin with full customization option.
+After install a default wishlist button will appear beside WooCommerce add to cart button (In Single Product detail page).
 
 Some highlighted features:
 * WordPress Admin can Set wishlist button text/icon/html.
@@ -23,8 +19,8 @@ Some highlighted features:
 * Default Wishlist button can be hidden from plugin setting page.
 
 Some highlighted features for theme developer:
-* Theme Developer can change the wishlist button text/icon/html by creating file in the theme folder.
-* Developer can overwrite the wishlist render template by creating file in the appropriate folder
+* Theme Developer can change the wishlist button text/icon/html by creating file(in specific location) in the theme folder.
+* Theme Developer can overwrite the wishlist render template by creating file in the appropriate folder
 
 
 == Installation ==
@@ -41,26 +37,17 @@ You will found the settings page from WordPress Dashboard > Settings > Wishlist 
 By default this plugin add wishlist button beside Add to cart Button (In Product detail page). However you can use this shortcode ` [SIT-WISHLIST-BUTTON]` for placing the button anywhere in the product page
 
 = Why wishlist link (from woocommerce my-account ) not working ? =
-Go to  WordPress Dashboard > Settings > Permalinks
+Go to  WordPress Dashboard > Settings > Permalinks, then click Save Changes. 
 Update the permalinks settings (click Save Changes button)
 
 
 
 == Documentation == 
-= How to change button text/html/icon =
-1. Go to plugin settings page,  WordPress Dashboard > Settings > Wishlist – Shibainu IT.
-1. You will found 2 input field's there to add you TEXT/HTML/ICON. 
-1. You can add SVG ICON, Font Awesome icon, plain there to modify the button.
-1. Click save after adding you TEXT/HTML/ICON. 
-
-= How to Hide default button =
-1. Go to plugin settings page,  WordPress Dashboard > Settings > Wishlist – Shibainu IT.
-1. Set the `Set Wishlist button visibility` to Hidden
-1. Click save
+For full documentation Please visit [https://shibainuit.com/wishlist-shibainuit](https://shibainuit.com/wishlist-shibainuit/ "Wishlist Shibainu full documentation") 
 
 
 == Screenshots ==
-
+1. 
 
 == Changelog ==
 
