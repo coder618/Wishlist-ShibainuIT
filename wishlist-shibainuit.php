@@ -9,6 +9,8 @@
  * Requires at least: 5.0
  * Tested up to: 5.7.2
  * Text Domain: sit
+ * SVN URL: https://plugins.svn.wordpress.org/wishlist-shibainuit
+ * Public URL: https://wordpress.org/plugins/wishlist-shibainuit
 */
 
 /**
