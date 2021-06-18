@@ -13,22 +13,22 @@
 
 .sit-wishlist-btn {
     border: 0;
-    margin: 5px 10px;
     background-color: transparent;
     padding: 0;
     display: inline-block;
-}
-
-.sit-wishlist-btn img {
-    margin-right: 5px;
 }
 
 .sit-wishlist-btn.disabled {
     opacity: 0.5;
 }
 
-.wishlist-btn-inner {
+.sit-wishlist-btn-inner {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 5px 10px;
+}
+
+.sit-wishlist-btn-inner svg {
+    margin-right: 5px;
 }

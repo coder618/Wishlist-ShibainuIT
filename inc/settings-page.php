@@ -17,11 +17,11 @@ function sit_wishlist_wp_setting_page_html(){
                 <tbody>
                     <tr>
                         <th scope="row"><label for="sit_before_add_html">Before adding product button text/html</label></th>
-                        <td><input name="sit_before_add_html" type="text" id="sit_before_add_html" value="<?php echo wp_kses_post(get_option( SIT_BEFORE_ADDED_BTN_HTML )) ?>" class="regular-text"></td>
+                        <td><input name="sit_before_add_html" type="text" id="sit_before_add_html" value="<?php echo esc_attr(get_option( SIT_BEFORE_ADDED_BTN_HTML )) ?>" class="regular-text"></td>
                     </tr>
                     <tr>
                         <th scope="row"><label for="sit_after_add_html">After adding product button text/html</label></th>
-                        <td><input name="sit_after_add_html" type="text" id="sit_after_add_html" value="<?php echo wp_kses_post( get_option( SIT_AFTER_ADDED_BTN_HTML )) ?>" class="regular-text"></td>
+                        <td><input name="sit_after_add_html" type="text" id="sit_after_add_html" value="<?php echo esc_attr(get_option( SIT_AFTER_ADDED_BTN_HTML )) ?>" class="regular-text"></td>
                     </tr>
 
                     <tr>

@@ -158,10 +158,10 @@ function sit_update_wishlist_settings(){
         $after_html = '';
         
         if(isset( $_POST['before_html'] )   && !empty( $_POST['before_html'] )){
-            $before_html = wp_filter_post_kses(  $_POST['before_html'] );
+            $before_html = stripslashes( $_POST['before_html'] );
         }
         if( isset( $_POST['after_html'] )   && !empty( $_POST['after_html'] ) ){
-            $after_html = wp_filter_post_kses(  $_POST['after_html'] );
+            $after_html = stripslashes( $_POST['after_html'] );
         }
 
 
