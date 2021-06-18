@@ -1,4 +1,4 @@
-=== Wishlist Shibainu ===
+=== Wishlist ShibainuIT ===
 Contributors: coder618
 Donate link: https://shibainuit.com/
 Tags: Wishlist, Custom Wishlist, WooCommerce wishlist, shibainuit wishlist, shibainu
@@ -38,7 +38,6 @@ By default this plugin add wishlist button beside Add to cart Button (In Product
 
 = Why wishlist link (from woocommerce my-account ) not working ? =
 Go to  WordPress Dashboard > Settings > Permalinks, then click Save Changes. 
-Update the permalinks settings (click Save Changes button)
 
 
 
@@ -47,7 +46,8 @@ For full documentation Please visit [https://shibainuit.com/wishlist-shibainuit]
 
 
 == Screenshots ==
-1. 
+1. Wishlist Settings page
+2. Default view of wishlist button 
 
 == Changelog ==
 

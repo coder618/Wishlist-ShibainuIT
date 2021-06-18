@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name: Wishlist - SHIBAINU IT
+ * Plugin Name: Wishlist ShibainuIT
  * Description: WooCommerce Wishlist Plugin by SHIBAINU IT 
  * Version: 1.00
- * Author:SHIBAINU IT  
+ * Author: SHIBAINU IT  
  * Author URI: https://shibainuit.com
  * License: GPL2
  * Requires at least: 5.0
