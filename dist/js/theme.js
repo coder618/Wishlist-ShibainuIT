@@ -33,6 +33,7 @@
                         btn.attr("data-action", "add");
                         if (btn.hasClass("sit-dashboard-btn")) {
                             btn.parents("tr").slideUp();
+                            btn.parents(".wishlist-item").slideUp();
                         }
                     }
                     if (data_action == "add") {
