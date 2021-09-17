@@ -1,3 +1,6 @@
+/**
+ * User script load in front end
+ */
 (function ($) {
     $("body .sit-wishlist-btn").on("click", function (e) {
         var btn = $(this);

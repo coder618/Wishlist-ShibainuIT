@@ -16,6 +16,8 @@
     background-color: transparent;
     padding: 0;
     display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .sit-wishlist-btn.disabled {

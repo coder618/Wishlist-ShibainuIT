@@ -1,3 +1,6 @@
+/**
+ * Admin script load in dashboard
+ */
 (function ($) {
     $("#sit-wishlist-settings-form").on("submit", function (e) {
         e.preventDefault();
