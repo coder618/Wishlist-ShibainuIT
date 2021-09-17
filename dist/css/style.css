@@ -34,3 +34,7 @@
 .sit-wishlist-btn-inner svg {
     margin-right: 5px;
 }
+
+.sit-wishlist-btn-wrapper {
+    clear: both;
+}

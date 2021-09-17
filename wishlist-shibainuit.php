@@ -60,6 +60,7 @@ class SIT_Wishlist{
 
     public function includes() {
 		require __DIR__ . '/inc/overwrite-templates.php'; 	// Overwrite the plugin file
+		require __DIR__ . '/inc/useful-functions.php'; 	// Overwrite the plugin file
 		require __DIR__ . '/inc/add-to-wishlist-btn.php'; 	// add the button to front-end
 		require __DIR__ . '/inc/ajax.php'; 					// Ajax function for add remove the wishlist 
 		require __DIR__ . '/inc/add-endpoint.php'; 			// Add woocommerce end point

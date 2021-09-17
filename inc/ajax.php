@@ -2,6 +2,7 @@
 // main ajax functions
 
 add_action( 'wp_ajax_sit_update_wishlist', 'sit_update_wishlist' );
+add_action( 'wp_ajax_nopriv_sit_update_wishlist', 'sit_update_wishlist' );
 
 function sit_update_wishlist(){
     if(  
@@ -21,42 +22,29 @@ function sit_update_wishlist(){
             die();
         }
 
-        $key = SIT_USER_META_KEY;
-
         $wishlist_action    = sanitize_text_field( trim($_POST['sit_action']) );
-        $c_user_id          = get_current_user_id();
         $c_post_id          = intval($_POST['sit_post_id']);
-        $item_in_wishlist   = false;
-        $btn_inner_html     = '';
+
+        $wishlist_array     = sit_get_wishlist_array();
+        $item_in_wishlist   = sit_is_item_in_wishlist($c_post_id);
 
         
+        if( $wishlist_action == 'add'  ){
 
-        
-        $wishlist_array = get_user_meta( $c_user_id, $key, true );
-        
-        if( !$wishlist_array ){
-            $wishlist_array = [];
-        }
-
-        // check if item already in wishlist
-        if( in_array( $c_post_id,  $wishlist_array)){
-            $item_in_wishlist = true;
-        }
-
-
-        if( $wishlist_action == 'add' ){
-
-            if( $item_in_wishlist  ){
+            if( $item_in_wishlist == true  ){
+                // if item already in wishlist
                 echo json_encode([
                     'status' => false,
-                    'message' => "Item already have in your wishlist",                    
+                    'message' => "Item already have in your wishlist.",    
+                    'wishlist_array' => $wishlist_array                
                 ]);
-
             }else{
+                // save the item to wishlist array
                 $wishlist_array[] = $c_post_id;
-                update_user_meta($c_user_id, $key, $wishlist_array);
-                
-                // get the button html 
+
+                // set the wishlist item to system
+                sit_set_wishlist_array($wishlist_array);
+
                 ob_start();
                     sit_wishlist_template("after-add-btn.php");                
                     $btn_inner_html = ob_get_contents();
@@ -67,17 +55,17 @@ function sit_update_wishlist(){
                     'message' => "Item added to your wishlist",
                     'btn_inner_html' => $btn_inner_html
                 ]);
+                
             }
-
         }elseif($wishlist_action == 'remove' ){
-
+    
             if( $item_in_wishlist ){
-
+        
                 // unset($wishlist_array[$c_post_id]);
                 unset($wishlist_array[array_search($c_post_id,$wishlist_array)]);
 
-                update_user_meta($c_user_id, $key, $wishlist_array);
-                
+                sit_set_wishlist_array($wishlist_array);
+        
                 // get the button html 
                 ob_start();
                     sit_wishlist_template("before-add-btn.php");                
@@ -88,12 +76,12 @@ function sit_update_wishlist(){
                     'message' => "Item removed from your wishlist",
                     'btn_inner_html' => $btn_inner_html
                 ]);
-
+        
             }else{
-
+        
                 echo json_encode([
                     'status' => false,
-                    'message' => "Item not found in your wishlist or it already removed"
+                    'message' => "Item not found in your wishlist!"
                 ]);
                 
             }
@@ -101,9 +89,10 @@ function sit_update_wishlist(){
         }else{
             echo json_encode([
                 'status' => false,
-                'message' => "Please check your request. no action matched"
+                'message' => "Invalid Action",                
             ]);
         }
+        
 
     }else{
         echo json_encode([
