@@ -2,7 +2,7 @@
 $sit_wishlist_items = sit_get_wishlist_array();
 
 ?>
-<div class="sit-wishlist-modal-wrapper" style="display:none">
+<div class="sit-wishlist-modal-wrapper" style="display:none" id="sit-wishlist-modal-wrapper">
     <div class="sit-modal-inner">
 
         <div class="sit-modal-content">

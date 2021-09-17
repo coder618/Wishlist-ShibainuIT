@@ -30,6 +30,10 @@
                     btn.html(res["btn_inner_html"]);
                 }
 
+                if ("modal_html" in res && res["modal_html"]) {
+                    $("body #sit-wishlist-modal-placeholder").html(res["modal_html"]);
+                }
+
                 // change action attribute
                 if (res.status == true) {
                     if (data_action == "remove") {
@@ -59,14 +63,14 @@
 // Modal functionality
 (function ($) {
     // visible the modal
-    $(".sit-show-my-wishlist-btn").on("click", function (e) {
+    $("body .sit-show-my-wishlist-btn").on("click", function (e) {
         e.preventDefault();
         $(".sit-wishlist-modal-wrapper").fadeIn();
         $("html").addClass("sit-overflow-hidden");
     });
 
     // close the modal
-    $(".sit-wishlist-modal-close-btn").on("click", function (e) {
+    $("body").on("click", ".sit-wishlist-modal-close-btn", function (e) {
         e.preventDefault();
         $(".sit-wishlist-modal-wrapper").fadeOut();
         $("html").removeClass("sit-overflow-hidden");
@@ -74,7 +78,7 @@
 
     // remove item after click remove
 
-    $("body .sit-remove-wishlist-btn-from-modal").on("click", function (e) {
+    $("body").on("click", ".sit-remove-wishlist-btn-from-modal", function (e) {
         var btn = $(this);
         var data_url = $(this).attr("data-admin-url");
         var data_post_id = $(this).attr("data-post-id");
@@ -101,12 +105,29 @@
 
                 // change action attribute
                 if (res.status == true) {
+                    // change main product  page btn wishlist add/remove button html
+                    if ("btn_inner_html" in res && res["btn_inner_html"]) {
+                        var main_page_btn = $('body .sit-wishlist-btn[data-post-id="' + data_post_id + '"]');
+
+                        if (main_page_btn.length) {
+                            main_page_btn.html(res["btn_inner_html"]);
+                            var btn_action = main_page_btn.attr("data-action");
+                            if (btn_action == "remove") {
+                                main_page_btn.attr("data-action", "add");
+                            } else {
+                                main_page_btn.attr("data-action", "remove");
+                            }
+                        }
+                    }
+
+                    // hide the clicked item
                     btn.parents(".sit-modal-wishlist-item").slideUp(400, function () {
                         btn.parents(".sit-modal-wishlist-item").remove();
 
+                        // if no item available show the no content div
                         if ($(".sit-modal-wishlist-items div").length) {
                         } else {
-                            $(".sit-modal-wishlist-items").html('<div class="sit-modal-no-item-wrapper">                        <div class="sit-modal-no-title">No item found</div>                        <div class="sit-modal-no-detail">Your wishlist is empty!</div>                    </div>');
+                            $(".sit-modal-wishlist-items").html('<div class="sit-modal-no-item-wrapper"><div class="sit-modal-no-title">No item found</div><div class="sit-modal-no-detail">Your wishlist is empty!</div></div>');
                         }
                     });
                 }

@@ -46,13 +46,20 @@ function sit_update_wishlist(){
                 sit_set_wishlist_array($wishlist_array);
 
                 ob_start();
-                    sit_wishlist_template("after-add-btn.php");                
+                    sit_wishlist_template("after-add-btn.php");
                     $btn_inner_html = ob_get_contents();
                 ob_end_clean();
 
+                ob_start();
+                    sit_wishlist_template("sit-my-wishlist-modal.php");
+                    $modal_html = ob_get_contents();
+                ob_end_clean();
+                    
+                    
                 echo json_encode([
                     'status' => true,
                     'message' => "Item added to your wishlist",
+                    'modal_html' => $modal_html,
                     'btn_inner_html' => $btn_inner_html
                 ]);
                 
@@ -71,9 +78,16 @@ function sit_update_wishlist(){
                     sit_wishlist_template("before-add-btn.php");                
                     $btn_inner_html = ob_get_contents();
                 ob_end_clean();
+
+                ob_start();
+                    sit_wishlist_template("sit-my-wishlist-modal.php");
+                    $modal_html = ob_get_contents();
+                ob_end_clean();
+
                 echo json_encode([
                     'status' => true,
                     'message' => "Item removed from your wishlist",
+                    'modal_html' => $modal_html,
                     'btn_inner_html' => $btn_inner_html
                 ]);
         
