@@ -65,6 +65,7 @@ class SIT_Wishlist{
 		require __DIR__ . '/inc/ajax.php'; 					// Ajax function for add remove the wishlist 
 		require __DIR__ . '/inc/add-endpoint.php'; 			// Add woocommerce end point
 		require __DIR__ . '/inc/settings-page.php';			// Settings page register
+		require __DIR__ . '/inc/add-modal-frontend.php'; 	// Overwrite the plugin file
 	}
 }
 

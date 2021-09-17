@@ -38,3 +38,105 @@
 .sit-wishlist-btn-wrapper {
     clear: both;
 }
+
+.sit-overflow-hidden {
+    overflow: hidden;
+}
+
+.sit-wishlist-modal-wrapper {
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow-y: auto;
+    display: block;
+    top: 0;
+}
+
+.sit-wishlist-modal-wrapper .sit-modal-inner {
+    display: block;
+    margin: 0 auto;
+    padding: 100px 25px;
+}
+
+.sit-modal-content {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 5px 5px 40px rgb(39 39 39 / 25%);
+    border-radius: 5px;
+    position: relative;
+}
+
+.sit-modal-title {
+    padding: 25px 30px;
+    border-bottom: 1px solid #ccc;
+    font-size: 20px;
+    /* margin-bottom: 10px; */
+}
+.sit-modal-wishlist-item a {
+    text-decoration: none;
+}
+
+.sit-modal-wishlist-items {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+}
+
+.sit-modal-wishlist-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 25px;
+}
+.sit-wishlist-modal-close-btn {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    position: absolute;
+    right: 30px;
+    top: 28px;
+    background-color: transparent;
+}
+.sit-wishlist-modal-close-btn:hover path {
+    fill: tomato;
+}
+
+.sit-remove-wishlist-btn-from-modal {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+.sit-remove-wishlist-btn-from-modal:hover svg path {
+    fill: tomato;
+}
+
+.sit-modal-no-item-wrapper {
+    border: 2px dashed #ccc;
+    padding: 40px 25px;
+    text-align: center;
+    margin: 0 25px;
+    background-color: #f6f8fa;
+    border: 1px dashed #ebebeb;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.sit-modal-no-title {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.sit-modal-no-detail {
+    font-weight: 400;
+    font-size: 15px;
+}
