@@ -4,7 +4,7 @@ Donate link: https://shibainuit.com/
 Tags: Wishlist, Custom Wishlist, WooCommerce wishlist, shibainuit wishlist, shibainu
 Requires at least: 5.0
 Tested up to: 5.7.2
-Stable tag: 1.00
+Stable tag: 2.00
 Requires PHP: 7.0
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -50,6 +50,9 @@ For full documentation Please visit [https://shibainuit.com/wishlist-shibainuit]
 2. Default view of wishlist button 
 
 == Changelog ==
+= 2.0.0 =
+* Not login user can save wishlist item
+* Default wishlist icon change
 
 = 1.0.0 =
 * First release.

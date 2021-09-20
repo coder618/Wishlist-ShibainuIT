@@ -125,7 +125,7 @@
                         btn.parents(".sit-modal-wishlist-item").remove();
 
                         // if no item available show the no content div
-                        if ($(".sit-modal-wishlist-items div").length) {
+                        if ($("body .sit-modal-wishlist-items div").length) {
                         } else {
                             $(".sit-modal-wishlist-items").html('<div class="sit-modal-no-item-wrapper"><div class="sit-modal-no-title">No item found</div><div class="sit-modal-no-detail">Your wishlist is empty!</div></div>');
                         }

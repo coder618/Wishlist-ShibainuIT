@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Wishlist ShibainuIT
  * Description: Highly customizable WooCommerce wishlist plugin.
- * Version: 1.00
+ * Version: 2.00
  * Author: SHIBAINU IT  
  * Author URI: https://shibainuit.com
  * License: GPL2
