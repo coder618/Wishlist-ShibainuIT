@@ -101,14 +101,25 @@
     justify-content: space-between;
     padding: 10px 30px;
 }
-.sit-wishlist-modal-close-btn {
-    width: 20px;
-    height: 20px;
+button.sit-wishlist-modal-close-btn {
+    width: 24px;
+    height: 24px;
     padding: 0;
     position: absolute;
     right: 30px;
     top: 28px;
-    background-color: transparent;
+    background-color: transparent !important;
+    background: transparent !important;
+    border: none;
+}
+button.sit-wishlist-modal-close-btn:focus,
+button.sit-wishlist-modal-close-btn:active {
+    outline: 0;
+    box-shadow: none;
+}
+
+.sit-remove-wishlist-btn-from-modal:hover {
+    border-color: transparent !important;
 }
 .sit-wishlist-modal-close-btn:hover path {
     fill: tomato;
@@ -125,7 +136,14 @@
     justify-content: center;
     align-items: center;
     background-color: transparent;
+    background: transparent !important;
 }
+.sit-remove-wishlist-btn-from-modal:active,
+.sit-remove-wishlist-btn-from-modal:focus {
+    outline: 0;
+    box-shadow: none;
+}
+
 .sit-remove-wishlist-btn-from-modal:hover svg path {
     fill: tomato;
 }
