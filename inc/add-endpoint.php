@@ -17,7 +17,7 @@ function sit_custom_query_vars( $vars ) {
 
 add_action( 'woocommerce_account_sit-wishlist_endpoint', function(){
     sit_wishlist_template("wishlist-render.php", [
-        'sit_wishlist_ids' => get_user_meta( get_current_user_id(  ), SIT_USER_META_KEY , true )
+        'sit_wishlist_ids' => sit_get_wishlist_array()
     ]);
 });
 
