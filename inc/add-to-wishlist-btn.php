@@ -22,6 +22,8 @@ function sit_after_add_to_cart_btn(){
     $item_in_wishlist   = sit_is_item_in_wishlist($c_post_id);
 
     $admin_url = admin_url( 'admin-ajax.php' );
+    ob_start();
+
     echo "<div class='sit-wishlist-btn-wrapper' >";
         if( $item_in_wishlist ): ?>
             <a role="button" class="sit-wishlist-btn" data-nonce="<?php echo esc_attr(wp_create_nonce('sit-wishlist')) ?>" data-post-id="<?php echo esc_attr($c_post_id) ?>" data-action="remove" data-admin-url="<?php echo esc_url($admin_url) ?>" >
@@ -33,4 +35,9 @@ function sit_after_add_to_cart_btn(){
             </a>
         <?php endif; 
     echo "</div>";
+
+    
+    $html = ob_get_clean();
+
+    return $html ; 
 }
