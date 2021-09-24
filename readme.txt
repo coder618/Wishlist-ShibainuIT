@@ -10,17 +10,19 @@ License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
+
 Its a woocommerce Wishlist plugin with full customization option.
 After install a default wishlist button will appear beside WooCommerce add to cart button (In Single Product detail page).
 
 Some highlighted features:
-* WordPress Admin can Set wishlist button text/icon/html.
-* Wishlist button can be add anywhere in product detail page via Short-Code [SIT-WISHLIST-BUTTON].
-* Default Wishlist button can be hidden from plugin setting page.
+1. WordPress Admin can Set wishlist button text/icon/html.
+2. Wishlist button can be add anywhere in product detail page via Short-Code [SIT-WISHLIST-BUTTON].
+3. Default Wishlist button can be hidden from plugin setting page.
 
 Some highlighted features for theme developer:
-* Theme Developer can change the wishlist button text/icon/html by creating file(in specific location) in the theme folder.
-* Theme Developer can overwrite the wishlist render template by creating file in the appropriate folder
+1. Theme Developer can change the wishlist button text/icon/html by creating file(in specific location) in the theme folder.
+2. Theme Developer can overwrite the wishlist render template by creating file in the appropriate folder
+
 
 
 == Installation ==

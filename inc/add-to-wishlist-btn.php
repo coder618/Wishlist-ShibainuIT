@@ -5,12 +5,15 @@
 
 // check if user want to visible the default button
 if( get_option( SIT_DEFAULT_WISHLIST_BTN_VISIBILITY , 'visible' ) == 'visible' ){
-    add_action( 'woocommerce_after_add_to_cart_button', 'sit_after_add_to_cart_btn' );
+    add_action( 'woocommerce_after_add_to_cart_button', 'sit_after_add_to_cart_btn_render' );
+}
+
+function sit_after_add_to_cart_btn_render(){
+    echo  sit_after_add_to_cart_btn();
 }
 
 // add shortcode support 
 add_shortcode( 'SIT-WISHLIST-BUTTON', 'sit_after_add_to_cart_btn' );
-
 
 function sit_after_add_to_cart_btn(){
 
@@ -36,8 +39,7 @@ function sit_after_add_to_cart_btn(){
         <?php endif; 
     echo "</div>";
 
-    
     $html = ob_get_clean();
 
-    return $html ; 
+    return $html;
 }
