@@ -50,6 +50,8 @@ For full documentation Please visit [https://shibainuit.com/wishlist-shibainuit]
 == Screenshots ==
 1. Wishlist Settings page
 2. Default view of wishlist button 
+3. Add my wishlist button
+4. My wishlist modal
 
 == Changelog ==
 = 2.0.0 =
