@@ -44,7 +44,7 @@ Go to  WordPress Dashboard > Settings > Permalinks, then click Save Changes.
 
 
 == Documentation == 
-For full documentation Please visit [https://shibainuit.com/wishlist-shibainuit](https://shibainuit.com/wishlist-shibainuit/ "Wishlist Shibainu full documentation") 
+For full documentation visit: https://shibainuit.com/wishlist-shibainuit/
 
 
 == Screenshots ==
